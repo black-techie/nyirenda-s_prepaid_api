@@ -1,0 +1,260 @@
+<html lang="en">
+
+<head>
+    <title>DATA PANEL</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/c32adfdcda.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary-color: #864887;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Mulish", sans-serif;
+            color: #262d2c;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        a:hover {
+            text-decoration: none !important;
+        }
+
+        .img-fluid {
+            width: 100%;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-grey {
+            background-color: #e3edef;
+            color: #8b8c8c;
+            font-weight: bold;
+            border: 1px solid #e3edef;
+        }
+
+        .btn-grey:hover {
+            color: #e3edef;
+            background-color: #fff;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        body {
+            background-color: #edf1f2;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            width: 100vw;
+            min-height: 100vh;
+        }
+
+        .wrapper {
+            max-width: 95vw;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .dashboard {
+            background-color: #edf1f2;
+        }
+
+        .dashboard__header {
+            background-color: #595959;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .dashboard__header p {
+            color: #ffffff;
+        }
+
+        .dashboard-main__item {
+            background-color: #fff;
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            flex: 32%;
+            max-width: 32%;
+            padding-bottom: 25px;
+        }
+
+        .dashboard-main-item__graph {
+            margin-bottom: -10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .dashboard-main-item__graph {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .dashboard-main__item h5 {
+            color: #b5b5b5;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            font-weight: normal;
+        }
+
+        .dashboard-main__item h5 i {
+            color: #b5b5b5;
+            font-size: 1rem;
+            margin-right: 10px;
+        }
+
+        .dashboard-main__item h4 {
+            font-weight: bold;
+            font-size: 3.2rem;
+        }
+
+        .dashboard-main__item h6 {
+            font-weight: normal;
+            color: #b5b5b5;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-main__item h6 * {
+            font-weight: normal;
+            color: #b5b5b5;
+            font-size: 1.1rem;
+        }
+
+        @media (min-width: 320px) and (max-width: 767px) {
+            .dashboard-main__item {
+                flex: 48%;
+                max-width: 48%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="dashboard">
+            <div class="dashboard__header">
+                <p>DATABASE</p>
+                <p id="date"></p>
+            </div>
+            <div class="dashboard__main">
+                <div class="row" id="row">
+
+                    <div class="dashboard-main__item">
+                        <h5><i class="fas fa-users-cog"></i> ADMINS</h5>
+                        <h4 id="admins"></h4>
+                        <h6>count</h6>
+                    </div>
+
+                    <div class="dashboard-main__item">
+                        <h5><i class="fas fa-building"></i> CLIENTS</h5>
+                        <h4 id="clients"></h4>
+                        <h6>count</h6>
+                    </div>
+
+                    <div class="dashboard-main__item">
+                        <h5><i class="fas fa-truck-moving"></i> SUPPLIERS</h5>
+                        <h4 id="providers"></h4>
+                        <h6>count</h6>
+                    </div>
+
+                    <div class="dashboard-main__item">
+                        <h5><i class="fas fa-globe-africa"></i> LOCATIONS</h5>
+                        <h4 id="locations"></h4>
+                        <h6>count</h6>
+                    </div>
+
+                    <div class="dashboard-main__item">
+                        <h5><i class="fas fa-tachometer-alt"></i> METERS</h5>
+                        <h4 id="meters"></h4>
+                        <h6>count</h6>
+                    </div>
+
+                    <div class="dashboard-main__item">
+                        <h5><i class="fas fa-users"></i> USERS</h5>
+                        <h4 id="users"></h4>
+                        <h6>count</h6>
+                    </div>
+                    <div class="dashboard-main__item">
+                        <h5><i class="fas fa-receipt"></i> TRANSACTIONS CREATED</h5>
+                        <h4 id="transactions"></h4>
+                        <h6>count</h6>
+                    </div>
+                    <div class="dashboard-main__item">
+                        <h5><i class="fas fa-money-bill"></i> REVENUES COLLECTED</h5>
+                        <h4 id="revenues"></h4>
+                        <h6>TZS</h6>
+                    </div>
+                    <div class="dashboard-main__item">
+                        <h5><i class="fas fa-tint"></i> WATER SOLD</h5>
+                        <h4 id="water"></h4>
+                        <h6>m<sup>3</sup>/h</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function updateTime() {
+            const tz = "Africa/Dar_es_Salaam";
+            const currentDate = new Date();
+            const options = { timeZone: tz, year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false };
+            document.getElementById("date").innerText = currentDate.toLocaleString('en-US', options);
+        }updateTime()
+
+
+
+        function updateData(){
+            fetch("/api/report/adminPanel")
+                .then(res => res.json())
+                    .then((res) => {
+                        console.log(res)
+                        document.getElementById("admins").innerText = res.data.admins_count
+                        document.getElementById("clients").innerText = res.data.clients_count
+                        document.getElementById("providers").innerText = res.data.providers_count
+                        document.getElementById("locations").innerText = res.data.locations_count
+                        document.getElementById("meters").innerText = res.data.meters_count
+                        document.getElementById("users").innerText = res.data.users_count
+                        document.getElementById("transactions").innerText = res.data.transactions.count
+                        document.getElementById("revenues").innerText = res.data.transactions.revenue
+                        document.getElementById("water").innerText = res.data.transactions.water.toFixed(2);
+                    })
+        }updateData()
+
+        // call this functions regular
+        setInterval(updateTime, 1000)
+        setInterval(updateData, 20000)
+    </script>
+</body>
+
+</html>

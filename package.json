@@ -1,0 +1,27 @@
+{
+  "name": "payment-gateway",
+  "version": "1.0.50",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run src/index.ts",
+    "sync": "bunx prisma migrate dev --name init"
+  },
+  "dependencies": {
+    "@elysiajs/cookie": "^0.8.0",
+    "@elysiajs/jwt": "^0.8.0",
+    "@elysiajs/static": "^0.8.1",
+    "@otherguy/elysia-logging": "^0.0.16",
+    "@prisma/client": "^5.10.2",
+    "elysia": "latest",
+    "node-forge": "^1.3.1",
+    "pem": "^1.14.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.25",
+    "@types/node-forge": "^1.3.11",
+    "bun-types": "latest",
+    "prisma": "^5.10.2"
+  },
+  "module": "src/index.js"
+}
